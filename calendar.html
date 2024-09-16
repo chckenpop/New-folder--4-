@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="calendar.css">
+  <title>Calendar App</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="forums.html">Forums</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div id="calendar">
+      <div class="navigation">
+        <button id="prevMonth">&lt;</button>
+        <div id="monthYear">August 2024</div>
+        <button id="nextMonth">&gt;</button>
+      </div>
+      <div class="days"></div>
+    </div>
+  </div>
+
+  <!-- Timetable Modal -->
+  <div id="timetableModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <div id="dailyDate">August 15, 2024</div>
+      <div class="daily-schedule">
+        <div class="timetable">
+          <!-- Time slots will be dynamically added here -->
+        </div>
+        <div class="schedule-events">
+          <!-- Events will be dynamically added here -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="text" id="eventTitle" placeholder="Event Title">
+        <input type="text" id="eventTime" placeholder="Event Time">
+        <textarea id="eventDescription" placeholder="Event Description"></textarea>
+        <button id="saveEvent">Save Event</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event Detail Modal -->
+  <div id="eventDetailModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeEventDetailModal">&times;</span>
+      <div id="eventDetailTitle">Event Title</div>
+      <div id="eventDetailDescription">Event Description</div>
+    </div>
+  </div>
+
+  <script src="calendar.js" defer></script>
+</body>
+</html>

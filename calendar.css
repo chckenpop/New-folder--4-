@@ -1,0 +1,282 @@
+/* style.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #1e1e1e; /* Dark background color */
+    position: relative;
+  }
+  
+  header {
+    width: 100%;
+    background: #1e1e1e;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is above everything */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #4a90e2;
+  }
+  
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
+    z-index: 2000; /* Ensure it is above the background */
+  }
+  
+  #calendar {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #333;
+    position: relative;
+    z-index: 2100; /* Ensure calendar is above background */
+  }
+  
+  #monthYear {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #e0e0e0;
+  }
+  
+  .navigation {
+    position: sticky;
+    top: 0;
+    background: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #prevMonth, #nextMonth {
+    background: #4a90e2;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  #prevMonth:hover, #nextMonth:hover {
+    background: #357abd;
+  }
+  
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #333;
+  }
+  
+  .days div {
+    background: #222;
+    color: #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .days div:hover {
+    background: #444;
+    color: #fff;
+  }
+  
+  /* Timetable Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 3000; /* Ensure modal is above everything */
+  }
+  
+  .modal-content {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e0e0e0;
+  }
+  
+  #dailyDate {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .daily-schedule {
+    display: flex;
+  }
+  
+  .timetable {
+    width: 120px;
+    background: #2b2b2b;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 10px;
+    overflow-y: auto;
+    height: 400px; /* Adjust based on needs */
+  }
+  
+  .timetable-hour {
+    background: #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .timetable-hour:hover {
+    background: #444;
+    color: #fff;
+  }
+  
+  .schedule-events {
+    flex: 1;
+    background: #2b2b2b;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .schedule-events div {
+    background: #333;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .schedule-events div:hover {
+    background: #444;
+    color: #fff;
+  }
+  
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #eventTitle, #eventTime, #eventDescription {
+    padding: 10px;
+    border: 1px solid #444;
+    background: #222;
+    color: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  #eventDescription {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  #saveEvent {
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #saveEvent:hover {
+    background: #357abd;
+  }
+  
+  /* Event Detail Modal Styles */
+  #eventDetailModal .modal-content {
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  #eventDetailTitle {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  #eventDetailDescription {
+    font-size: 1rem;
+  }
+
+.timetable-hour.selected {
+    background: #4a90e2;
+    color: #fff;
+  }
+  
+  .timetable-hour.selected:hover {
+    background: #357abd;
+  }
+.schedule-events .event-item {
+    background: #4a90e2;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.schedule-events .event-item:hover {
+    background: #357abd;
+}

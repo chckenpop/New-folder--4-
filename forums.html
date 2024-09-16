@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calendar.html">Calendar</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <button class="closebtn" onclick="closeNav()">&times;</button>
+            <div class="sidebar-content">
+                <div class="category-filter">
+                    <label><input type="checkbox" class="category-checkbox" data-category="english"> English</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="maths"> Maths</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="science"> Science</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="social-studies"> Social Studies</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="physics"> Physics</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="chemistry"> Chemistry</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="marathi"> Marathi</label>
+                    <label><input type="checkbox" class="category-checkbox" data-category="hindi"> Hindi</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <button id="openCommentArea" class="comment-btn">+</button>
+
+            <div id="commentArea" class="comment-area">
+                <button id="closeCommentArea" class="closebtn">&times;</button>
+                <textarea id="commentText" placeholder="Write your comment..."></textarea>
+                <button id="submitComment">Submit</button>
+                <div class="dropdown-container">
+                    <button id="dropdownButton" class="dropdown-button">Select Category</button>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="#" data-category="english">English</a>
+                        <a href="#" data-category="maths">Maths</a>
+                        <a href="#" data-category="science">Science</a>
+                        <a href="#" data-category="social-studies">Social Studies</a>
+                        <a href="#" data-category="physics">Physics</a>
+                        <a href="#" data-category="chemistry">Chemistry</a>
+                        <a href="#" data-category="marathi">Marathi</a>
+                        <a href="#" data-category="hindi">Hindi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="commentsSection" class="comments-section">
+                <div class="comment" data-category="english">
+                    <div class="comment-category">English</div>
+                    <div class="comment-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet.</p>
+                    </div>
+                    <div class="comment-actions">
+                        <button class="upvote-btn" data-id="1">&#9650;</button>
+                        <span class="upvote-count" id="upvoteCount1">10</span>
+                    </div>
+                </div>
+                <!-- More comments here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
