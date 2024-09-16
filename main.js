@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerInterval;
     let startTime = 0;
     let elapsedTime = 0;
-    
+
     const formatTime = (milliseconds) => {
         const seconds = Math.floor(milliseconds / 1000) % 60;
         const minutes = Math.floor(milliseconds / 60000) % 60;
